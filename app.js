@@ -34,6 +34,14 @@ class HashTable {
         if (this.has(key)) return this.hashTable[bucketNumber];
         else return null;
     }
+
+    remove(key) {
+        if (this.has(key)) {
+            let bucketNumber = this.hash(key);
+            this.hashTable[bucketNumber] = undefined;
+            return true;
+        } else return false;
+    }
 }
 
 let ht1 = new HashTable();
@@ -41,4 +49,5 @@ ht1.set("Artem", 1);
 ht1.set("Barbara", 2);
 ht1.set("Carlos", 3);
 
-console.log(ht1.get("Artem"));
+console.log(ht1.remove("Artem"));
+console.log(ht1);
