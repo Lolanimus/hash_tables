@@ -42,6 +42,17 @@ class HashTable {
             return true;
         } else return false;
     }
+
+    length() {
+        let counter = 0;
+        this.hashTable.forEach(element => {
+            if (element != undefined) {
+                counter++;
+            }
+        });
+
+        return counter;
+    }
 }
 
 let ht1 = new HashTable();
@@ -50,4 +61,4 @@ ht1.set("Barbara", 2);
 ht1.set("Carlos", 3);
 
 console.log(ht1.remove("Artem"));
-console.log(ht1);
+console.log(ht1.length());
