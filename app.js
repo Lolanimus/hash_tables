@@ -53,6 +53,10 @@ class HashTable {
 
         return counter;
     }
+
+    clear() {
+        this.hashTable = [];
+    }
 }
 
 let ht1 = new HashTable();
@@ -61,4 +65,5 @@ ht1.set("Barbara", 2);
 ht1.set("Carlos", 3);
 
 console.log(ht1.remove("Artem"));
-console.log(ht1.length());
+ht1.clear();
+console.log(ht1);
