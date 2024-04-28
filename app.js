@@ -58,7 +58,7 @@ class HashTable {
         this.hashTable = [];
     }
 
-    key() {
+    keys() {
         let keys = [];
         this.hashTable.forEach((element, i) => {
             if (element != undefined) {
@@ -68,6 +68,17 @@ class HashTable {
         
         return keys;
     }
+
+    values() {
+        let values = [];
+        this.hashTable.forEach((element) => {
+            if (element != undefined) {
+                values.push(element);
+            }
+        });
+        
+        return values;
+    }
 }
 
 let ht1 = new HashTable();
@@ -76,5 +87,5 @@ ht1.set("Barbara", 2);
 ht1.set("Carlos", 3);
 
 ht1.remove("Artem");
-let keys = ht1.key();
-console.log(keys);
+let values = ht1.values();
+console.log(values);
