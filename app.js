@@ -25,10 +25,15 @@ class HashTable {
 
     has(key) {
         let bucketNumber = this.hash(key);
-        if (this.hashTable[bucketNumber] != null) return true
+        if (this.hashTable[bucketNumber] != null) return true;
         else return false;
     }
 
+    get(key) {
+        let bucketNumber = this.hash(key);
+        if (this.has(key)) return this.hashTable[bucketNumber];
+        else return null;
+    }
 }
 
 let ht1 = new HashTable();
@@ -36,4 +41,4 @@ ht1.set("Artem", 1);
 ht1.set("Barbara", 2);
 ht1.set("Carlos", 3);
 
-console.log(ht1.has("Carlos"));
+console.log(ht1.get("Artem"));
